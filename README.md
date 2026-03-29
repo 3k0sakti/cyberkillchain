@@ -1,12 +1,12 @@
 # VulnWeb - Intentionally Vulnerable Web Application
 
-🎯 **VulnWeb** is an intentionally vulnerable web application built for cybersecurity education and training, specifically for practicing the **Cyber Kill Chain** methodology.
+**VulnWeb**is an intentionally vulnerable web application built for cybersecurity education and training, specifically for practicing the**Cyber Kill Chain**methodology.
 
-## ⚠️ WARNING
+## WARNING
 
 **This application is intentionally dangerous and must only be used for educational purposes in a controlled environment. DO NOT deploy on production systems or public networks!**
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Running with Docker
 
@@ -31,29 +31,29 @@ http://localhost:8080
 | user2 | mypassword | User |
 | moderator | mod123 | Moderator |
 
-## 🎯 Available Vulnerabilities
+## Available Vulnerabilities
 
 ### 1. SQL Injection
-- **Location**: Login form, product search, orders page
-- **Impact**: Authentication bypass, data extraction, privilege escalation
-- **Testing**: `' OR '1'='1`, `' UNION SELECT ...`
+-**Location**: Login form, product search, orders page
+-**Impact**: Authentication bypass, data extraction, privilege escalation
+-**Testing**: `' OR '1'='1`, `' UNION SELECT ...`
 
 ### 2. Cross-Site Scripting (XSS)
-- **Location**: Comment system, profile updates
-- **Impact**: Session hijacking, credential theft
-- **Testing**: `<script>alert('XSS')</script>`, `<img src=x onerror=alert('XSS')>`
+-**Location**: Comment system, profile updates
+-**Impact**: Session hijacking, credential theft
+-**Testing**: `<script>alert('XSS')</script>`, `<img src=x onerror=alert('XSS')>`
 
 ### 3. Broken Authentication
-- **Vulnerabilities**: Weak passwords, predictable sessions, no account lockout
-- **Impact**: Account takeover, unauthorized access
-- **Testing**: Brute force, session prediction
+-**Vulnerabilities**: Weak passwords, predictable sessions, no account lockout
+-**Impact**: Account takeover, unauthorized access
+-**Testing**: Brute force, session prediction
 
 ### 4. Broken Access Control
-- **Vulnerabilities**: IDOR, privilege escalation, missing authorization
-- **Impact**: Unauthorized data access, privilege escalation
-- **Testing**: URL manipulation, parameter tampering
+-**Vulnerabilities**: IDOR, privilege escalation, missing authorization
+-**Impact**: Unauthorized data access, privilege escalation
+-**Testing**: URL manipulation, parameter tampering
 
-## 📚 Cyber Kill Chain Implementation
+## Cyber Kill Chain Implementation
 
 ### Phase 1: Reconnaissance
 - Port scanning and technology fingerprinting
@@ -91,39 +91,39 @@ http://localhost:8080
 - Account manipulation
 - System compromise
 
-## 🛠️ Struktur Aplikasi
+## Struktur Aplikasi
 
 ```
 vulnweb/
-├── docker-compose.yml          # Docker orchestration
-├── Dockerfile                  # Container definition
-├── apache-config.conf          # Apache configuration
-├── database/
-│   └── init.sql               # Database initialization
-└── src/
-    ├── config.php             # Database & core functions
-    ├── header.php             # Common header
-    ├── footer.php             # Common footer
-    ├── index.php              # Homepage
-    ├── login.php              # Login system (SQL injection)
-    ├── register.php           # Registration (privilege escalation)
-    ├── products.php           # Product listing (SQL injection)
-    ├── comments.php           # Comment system (XSS)
-    ├── orders.php             # Order management (broken access control)
-    ├── admin.php              # Admin panel (multiple vulnerabilities)
-    ├── profile.php            # User profile
-    ├── logout.php             # Logout functionality
-    └── vulnerabilities.php    # Vulnerability guide
+ docker-compose.yml          # Docker orchestration
+ Dockerfile                  # Container definition
+ apache-config.conf          # Apache configuration
+ database/
+    init.sql               # Database initialization
+ src/
+     config.php             # Database & core functions
+     header.php             # Common header
+     footer.php             # Common footer
+     index.php              # Homepage
+     login.php              # Login system (SQL injection)
+     register.php           # Registration (privilege escalation)
+     products.php           # Product listing (SQL injection)
+     comments.php           # Comment system (XSS)
+     orders.php             # Order management (broken access control)
+     admin.php              # Admin panel (multiple vulnerabilities)
+     profile.php            # User profile
+     logout.php             # Logout functionality
+     vulnerabilities.php    # Vulnerability guide
 ```
 
-## 🔍 Testing Tools
+## Testing Tools
 
 ### Recommended Tools:
-- **Burp Suite**: Web application security testing
-- **OWASP ZAP**: Automated vulnerability scanning
-- **sqlmap**: Automated SQL injection testing
-- **XSSHunter**: XSS testing platform
-- **Nikto**: Web server scanner
+-**Burp Suite**: Web application security testing
+-**OWASP ZAP**: Automated vulnerability scanning
+-**sqlmap**: Automated SQL injection testing
+-**XSSHunter**: XSS testing platform
+-**Nikto**: Web server scanner
 
 ### Manual Testing:
 1. Access `http://localhost:8080?debug=1` for debug mode
@@ -132,17 +132,17 @@ vulnweb/
 4. Test IDOR by modifying URL parameters
 5. Test privilege escalation during registration
 
-## 📖 Learning Objectives
+## Learning Objectives
 
 After using VulnWeb, students should be able to:
 
-1. **Understand the Cyber Kill Chain**: Apply all 7 phases in the context of web application security
-2. **Identify Vulnerabilities**: Recognize various types of web vulnerabilities
-3. **Exploitation Techniques**: Practice common exploitation techniques
-4. **Impact Assessment**: Understand the impact of each vulnerability
-5. **Mitigation Strategies**: Develop prevention and remediation strategies
+1.**Understand the Cyber Kill Chain**: Apply all 7 phases in the context of web application security
+2.**Identify Vulnerabilities**: Recognize various types of web vulnerabilities
+3.**Exploitation Techniques**: Practice common exploitation techniques
+4.**Impact Assessment**: Understand the impact of each vulnerability
+5.**Mitigation Strategies**: Develop prevention and remediation strategies
 
-## 🏁 Lab Scenarios
+## Lab Scenarios
 
 ### Scenario 1: Information Gathering
 - Perform reconnaissance to identify technologies in use
@@ -169,52 +169,52 @@ After using VulnWeb, students should be able to:
 - Maintain access using a backdoor
 - Document the persistence mechanism
 
-## 🛡️ Defensive Measures
+## Defensive Measures
 
 As part of the learning process, identify and implement:
 
-1. **Input Validation**: Proper sanitization and validation
-2. **Output Encoding**: Escape output to prevent XSS
-3. **Authentication**: Strong password policy, secure session management
-4. **Authorization**: Proper access control implementation
-5. **Error Handling**: Secure, non-verbose error messages
-6. **Security Headers**: CSP, X-Frame-Options, etc.
+1.**Input Validation**: Proper sanitization and validation
+2.**Output Encoding**: Escape output to prevent XSS
+3.**Authentication**: Strong password policy, secure session management
+4.**Authorization**: Proper access control implementation
+5.**Error Handling**: Secure, non-verbose error messages
+6.**Security Headers**: CSP, X-Frame-Options, etc.
 
-## 📝 Assessment Criteria
+## Assessment Criteria
 
 Grading is based on:
 
-1. **Technical Skills** (40%):
+1.**Technical Skills**(40%):
    - Ability to identify vulnerabilities
    - Exploitation techniques used
    - Tools and methodology
 
-2. **Documentation** (30%):
+2.**Documentation**(30%):
    - Clear and detailed report
    - Screenshots and proof of concept
    - Risk assessment
 
-3. **Understanding** (20%):
+3.**Understanding**(20%):
    - Understanding of the Cyber Kill Chain
    - Impact analysis
    - Mitigation recommendations
 
-4. **Methodology** (10%):
+4.**Methodology**(10%):
    - Systematic approach
    - Ethical considerations
    - Professional conduct
 
-## 📞 Support
+## Support
 
 For questions or assistance:
 - Open an issue in this repository
 - Consult with your instructor
 - Discuss in the class forum
 
-## 📄 License
+## License
 
 This application was built for educational purposes. Use it responsibly.
 
 ---
 
-**Good luck and enjoy the Cyber Kill Chain lab! 🎯**
+**Good luck and enjoy the Cyber Kill Chain lab!**
