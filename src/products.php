@@ -129,7 +129,7 @@ include 'header.php';
                             <div class="card-body">
                                 <p class="card-text"><?php echo htmlspecialchars($product['description']); ?></p>
                                 <p class="text-primary">
-                                    <strong>Price: Rp <?php echo number_format($product['price'], 0, ',', '.'); ?></strong>
+                                    <strong>Price: $<?php echo number_format($product['price'], 2, '.', ','); ?></strong>
                                 </p>
                                 
                                 <div class="btn-group" role="group">

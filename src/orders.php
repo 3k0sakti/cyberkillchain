@@ -94,7 +94,7 @@ include 'header.php';
                                 <td><?php echo htmlspecialchars($order['username']); ?></td>
                                 <td><?php echo htmlspecialchars($order['product_name']); ?></td>
                                 <td><?php echo $order['quantity']; ?></td>
-                                <td>Rp <?php echo number_format($order['total_price'], 0, ',', '.'); ?></td>
+                                <td>$<?php echo number_format($order['total_price'], 2, '.', ','); ?></td>
                                 <td>
                                     <span class="badge bg-<?php 
                                         echo $order['status'] === 'delivered' ? 'success' : 

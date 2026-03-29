@@ -1,28 +1,28 @@
 # VulnWeb - Intentionally Vulnerable Web Application
 
-🎯 **VulnWeb** adalah aplikasi web yang sengaja dibuat vulnerable untuk keperluan edukasi dan pelatihan keamanan siber, khususnya dalam menerapkan metodologi **Cyber Kill Chain**.
+🎯 **VulnWeb** is an intentionally vulnerable web application built for cybersecurity education and training, specifically for practicing the **Cyber Kill Chain** methodology.
 
-## ⚠️ PERINGATAN
+## ⚠️ WARNING
 
-**Aplikasi ini sangat berbahaya dan hanya boleh digunakan untuk tujuan edukasi dalam lingkungan yang terkontrol. JANGAN deploy di sistem produksi atau jaringan publik!**
+**This application is intentionally dangerous and must only be used for educational purposes in a controlled environment. DO NOT deploy on production systems or public networks!**
 
 ## 🚀 Quick Start
 
-### Menjalankan dengan Docker
+### Running with Docker
 
-1. Clone atau download aplikasi ini
-2. Pastikan Docker dan Docker Compose terinstall
-3. Jalankan perintah berikut:
+1. Clone or download this application
+2. Make sure Docker and Docker Compose are installed
+3. Run the following commands:
 
 ```bash
-# Build dan jalankan aplikasi
+# Build and start the application
 docker-compose up -d
 
-# Akses aplikasi di browser
+# Access the app in your browser
 http://localhost:8080
 ```
 
-### Akun Testing
+### Test Accounts
 
 | Username | Password | Role |
 |----------|----------|------|
@@ -31,15 +31,15 @@ http://localhost:8080
 | user2 | mypassword | User |
 | moderator | mod123 | Moderator |
 
-## 🎯 Vulnerabilities yang Tersedia
+## 🎯 Available Vulnerabilities
 
 ### 1. SQL Injection
-- **Lokasi**: Login form, product search, orders page
+- **Location**: Login form, product search, orders page
 - **Impact**: Authentication bypass, data extraction, privilege escalation
 - **Testing**: `' OR '1'='1`, `' UNION SELECT ...`
 
 ### 2. Cross-Site Scripting (XSS)
-- **Lokasi**: Comment system, profile updates
+- **Location**: Comment system, profile updates
 - **Impact**: Session hijacking, credential theft
 - **Testing**: `<script>alert('XSS')</script>`, `<img src=x onerror=alert('XSS')>`
 
@@ -56,34 +56,34 @@ http://localhost:8080
 ## 📚 Cyber Kill Chain Implementation
 
 ### Phase 1: Reconnaissance
-- Port scanning dan technology fingerprinting
+- Port scanning and technology fingerprinting
 - Directory enumeration
-- Information gathering melalui debug mode (`?debug=1`)
+- Information gathering via debug mode (`?debug=1`)
 
 ### Phase 2: Weaponization
-- Menyiapkan SQL injection payloads
-- Membuat XSS payloads
-- Menyiapkan privilege escalation exploits
+- Crafting SQL injection payloads
+- Creating XSS payloads
+- Preparing privilege escalation exploits
 
 ### Phase 3: Delivery
-- Injeksi melalui form login
-- XSS melalui sistem komentar
-- Parameter manipulation di URL
+- Injection via the login form
+- XSS through the comment system
+- Parameter manipulation in URLs
 
 ### Phase 4: Exploitation
-- Eksekusi SQL injection
-- Eksekusi XSS payload
+- SQL injection execution
+- XSS payload execution
 - Authentication bypass
 - IDOR exploitation
 
 ### Phase 5: Installation
-- Membuat persistent XSS
-- Injeksi admin accounts
+- Creating persistent XSS
+- Injecting admin accounts
 - Session fixation
 
 ### Phase 6: Command & Control
-- Akses admin panel
-- Penggunaan SQL console
+- Accessing the admin panel
+- Using the SQL console
 - User management
 
 ### Phase 7: Actions on Objectives
@@ -126,76 +126,76 @@ vulnweb/
 - **Nikto**: Web server scanner
 
 ### Manual Testing:
-1. Akses `http://localhost:8080?debug=1` untuk debug mode
-2. Test SQL injection di form login dan pencarian
-3. Test XSS di sistem komentar
-4. Test IDOR dengan mengubah parameter URL
-5. Test privilege escalation saat registrasi
+1. Access `http://localhost:8080?debug=1` for debug mode
+2. Test SQL injection on the login form and search
+3. Test XSS in the comment system
+4. Test IDOR by modifying URL parameters
+5. Test privilege escalation during registration
 
 ## 📖 Learning Objectives
 
-Setelah menggunakan VulnWeb, mahasiswa diharapkan dapat:
+After using VulnWeb, students should be able to:
 
-1. **Memahami Cyber Kill Chain**: Menerapkan 7 fase dalam konteks web application security
-2. **Identifikasi Vulnerabilities**: Mengenali berbagai jenis kerentanan web
-3. **Exploitation Techniques**: Mempraktikkan teknik eksploitasi yang umum
-4. **Impact Assessment**: Memahami dampak dari setiap vulnerability
-5. **Mitigation Strategies**: Mengembangkan strategi pencegahan dan perbaikan
+1. **Understand the Cyber Kill Chain**: Apply all 7 phases in the context of web application security
+2. **Identify Vulnerabilities**: Recognize various types of web vulnerabilities
+3. **Exploitation Techniques**: Practice common exploitation techniques
+4. **Impact Assessment**: Understand the impact of each vulnerability
+5. **Mitigation Strategies**: Develop prevention and remediation strategies
 
-## 🏁 Skenario Ujian
+## 🏁 Lab Scenarios
 
 ### Scenario 1: Information Gathering
-- Lakukan reconnaissance untuk mengidentifikasi teknologi yang digunakan
-- Temukan endpoint dan parameter yang vulnerable
-- Dokumentasikan temuan
+- Perform reconnaissance to identify technologies in use
+- Find vulnerable endpoints and parameters
+- Document your findings
 
 ### Scenario 2: Authentication Bypass
-- Bypass sistem autentikasi menggunakan SQL injection
-- Akses akun admin tanpa mengetahui password
-- Dokumentasikan langkah-langkah exploit
+- Bypass the authentication system using SQL injection
+- Access the admin account without knowing the password
+- Document each step of the exploit
 
 ### Scenario 3: Data Extraction
-- Extract data sensitif dari database
-- Temukan password pengguna lain
-- Dokumentasikan data yang berhasil diambil
+- Extract sensitive data from the database
+- Find other users' passwords
+- Document the data successfully retrieved
 
 ### Scenario 4: Privilege Escalation
-- Escalate privilege dari user biasa ke admin
-- Akses fungsi administratif
-- Dokumentasikan metode yang digunakan
+- Escalate privileges from a regular user to admin
+- Access administrative functions
+- Document the method used
 
 ### Scenario 5: Persistent Attack
-- Buat persistent XSS untuk steal cookies
-- Maintain access menggunakan backdoor
-- Dokumentasikan persistence mechanism
+- Create a persistent XSS to steal cookies
+- Maintain access using a backdoor
+- Document the persistence mechanism
 
 ## 🛡️ Defensive Measures
 
-Sebagai bagian dari pembelajaran, identifikasi dan implementasikan:
+As part of the learning process, identify and implement:
 
-1. **Input Validation**: Proper sanitization dan validation
-2. **Output Encoding**: Escape output untuk mencegah XSS
-3. **Authentication**: Strong password policy, session management
+1. **Input Validation**: Proper sanitization and validation
+2. **Output Encoding**: Escape output to prevent XSS
+3. **Authentication**: Strong password policy, secure session management
 4. **Authorization**: Proper access control implementation
-5. **Error Handling**: Secure error messages
-6. **Security Headers**: CSP, X-Frame-Options, dll
+5. **Error Handling**: Secure, non-verbose error messages
+6. **Security Headers**: CSP, X-Frame-Options, etc.
 
 ## 📝 Assessment Criteria
 
-Penilaian berdasarkan:
+Grading is based on:
 
 1. **Technical Skills** (40%):
-   - Kemampuan mengidentifikasi vulnerability
-   - Teknik exploitation yang digunakan
-   - Tools dan methodology
+   - Ability to identify vulnerabilities
+   - Exploitation techniques used
+   - Tools and methodology
 
 2. **Documentation** (30%):
-   - Laporan yang jelas dan detail
-   - Screenshot dan proof of concept
+   - Clear and detailed report
+   - Screenshots and proof of concept
    - Risk assessment
 
 3. **Understanding** (20%):
-   - Pemahaman Cyber Kill Chain
+   - Understanding of the Cyber Kill Chain
    - Impact analysis
    - Mitigation recommendations
 
@@ -206,15 +206,15 @@ Penilaian berdasarkan:
 
 ## 📞 Support
 
-Untuk pertanyaan atau bantuan:
-- Buka issue di repository ini
-- Konsultasi dengan instruktur
-- Diskusi di forum kelas
+For questions or assistance:
+- Open an issue in this repository
+- Consult with your instructor
+- Discuss in the class forum
 
 ## 📄 License
 
-Aplikasi ini dibuat untuk tujuan edukasi. Gunakan dengan bijak dan bertanggung jawab.
+This application was built for educational purposes. Use it responsibly.
 
 ---
 
-**Selamat belajar dan semoga sukses dengan ujian Cyber Kill Chain! 🎯**
+**Good luck and enjoy the Cyber Kill Chain lab! 🎯**

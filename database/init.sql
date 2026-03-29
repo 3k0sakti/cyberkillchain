@@ -66,11 +66,11 @@ INSERT INTO users (username, password, email, role) VALUES
 ('testuser', '123456', 'test@example.com', 'user');
 
 INSERT INTO products (name, description, price, category) VALUES
-('Laptop Gaming', 'High-performance gaming laptop', 15000000.00, 'Electronics'),
-('Smartphone Android', 'Latest Android smartphone', 8000000.00, 'Electronics'),
-('Coffee Maker', 'Automatic coffee brewing machine', 2500000.00, 'Home'),
-('Wireless Headphones', 'Noise-canceling wireless headphones', 3500000.00, 'Electronics'),
-('Smart Watch', 'Fitness tracking smartwatch', 4500000.00, 'Electronics');
+('Gaming Laptop', 'High-performance gaming laptop', 1299.00, 'Electronics'),
+('Android Smartphone', 'Latest Android smartphone', 699.00, 'Electronics'),
+('Coffee Maker', 'Automatic coffee brewing machine', 199.00, 'Home'),
+('Wireless Headphones', 'Noise-canceling wireless headphones', 299.00, 'Electronics'),
+('Smart Watch', 'Fitness tracking smartwatch', 399.00, 'Electronics');
 
 INSERT INTO comments (user_id, product_id, comment) VALUES
 (2, 1, 'Great laptop! Very fast for gaming.'),
@@ -80,7 +80,7 @@ INSERT INTO comments (user_id, product_id, comment) VALUES
 (2, 4, 'Sound quality is amazing!');
 
 INSERT INTO orders (user_id, product_id, quantity, total_price, status) VALUES
-(2, 1, 1, 15000000.00, 'delivered'),
-(3, 2, 1, 8000000.00, 'shipped'),
-(2, 4, 2, 7000000.00, 'pending'),
-(3, 3, 1, 2500000.00, 'paid');
+(2, 1, 1, 1299.00, 'delivered'),
+(3, 2, 1, 699.00, 'shipped'),
+(2, 4, 2, 598.00, 'pending'),
+(3, 3, 1, 199.00, 'paid');
