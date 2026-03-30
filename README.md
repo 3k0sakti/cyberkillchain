@@ -31,6 +31,15 @@ http://localhost:8080
 | user2 | mypassword | User |
 | moderator | mod123 | Moderator |
 
+### phpMyAdmin
+
+Access: `http://localhost:8081`
+
+| Username | Password | Note |
+|----------|----------|------|
+| root | rootpass123 | Full access |
+| vulnuser | vulnpass123 | App user (database: vulnwebdb) |
+
 ## Available Vulnerabilities
 
 ### 1. SQL Injection
